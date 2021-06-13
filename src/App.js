@@ -2,9 +2,10 @@ import "./App.css";
 import FormularioLogin from "./components/FormularioLogin";
 import background from "./assets/images/Background.png";
 import { Card } from "react-bootstrap";
-import GoogleButton from "react-google-button";
+import OpcionesIniciales from "./components/OpcionesIniciales";
+import { goToSignUp } from "./components/OpcionesIniciales";
 
-function App() {
+function App(event) {
   return (
     <div className="App">
       <div className="d-md-flex h-md-100 align-items-center">
@@ -57,7 +58,8 @@ function App() {
           <div className="d-md-flex align-items-center h-md-100 p-5 justify-content-center">
             {/* --- Start of second half --- */}
 
-            <FormularioLogin />
+            {console.log(event)}
+            {event.clicked ? <FormularioLogin /> : <OpcionesIniciales />}
 
             {/* --- End of second half ---*/}
           </div>
